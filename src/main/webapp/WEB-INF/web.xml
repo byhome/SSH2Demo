@@ -47,7 +47,7 @@
 	<!-- Spring配置文件位置 -->
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:conf/spring.xml</param-value>
+		<param-value>classpath:conf/spring*.xml</param-value>
 	</context-param>
 
 	<!-- Struts2的核心过滤器配置 -->
@@ -68,5 +68,15 @@
 		<filter-name>struts2</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
+	
+	<!-- 将HibernateSession开关控制配置在Filter，保证一个请求一个session，并对lazy提供支持 -->
+	<filter>
+		<filter-name>OpenSessionInView</filter-name>
+		<filter-class>org.springframework.orm.hibernate4.support.OpenSessionInViewFilter</filter-class>
+		<init-param>
+			<param-name>singleSession</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</filter>
 
 </web-app>
