@@ -33,6 +33,13 @@
 		<result-types>
 			<result-type name="json" class="org.apache.struts2.json.JSONResult" />
 		</result-types>
+		<interceptors>
+			<interceptor name="checkLogin" class="com.yeguang.ssh2demo.interceptor.checkLogin" />
+			<interceptor-stack name="myInterceptor">
+				<interceptor-ref name="checkLogin" />
+				<interceptor-ref name="defaultStack" />
+			</interceptor-stack>
+		</interceptors>
 	</package>
 
 </struts>

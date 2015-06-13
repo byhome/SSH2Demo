@@ -1,6 +1,7 @@
 package com.yeguang.ssh2demo.action;
 
 import org.apache.struts2.convention.annotation.Action;
+import org.apache.struts2.convention.annotation.InterceptorRef;
 import org.apache.struts2.convention.annotation.ParentPackage;
 import org.apache.struts2.convention.annotation.Result;
 
@@ -11,7 +12,8 @@ public class TestAction {
 	private String result;  
     private String type; 	 
 	
-	@Action(value = "strust2Test", results = {@Result(name="success", type = "json")})
+	@Action(value = "strust2Test", interceptorRefs={@InterceptorRef(value = "myInterceptor")},
+			         results = {@Result(name="success", type = "json")})
 	public String test() {
 		System.out.println("进入TestAction");
 		setType("json");
