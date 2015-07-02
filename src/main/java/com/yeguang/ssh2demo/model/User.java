@@ -12,7 +12,6 @@ public class User {
 	private int id;
 	private String name;
 	private String password;
-	private int age;
 
 	@Column(name="name", length=30, nullable=false, unique=true)
 	public String getName() {
@@ -23,7 +22,7 @@ public class User {
 		this.name = name;
 	}
 	
-	@Column(name="password", length=20, nullable=false, unique=true)
+	@Column(name="password", length=20, nullable=false)
 	public String getPassword() {
 		return password;
 	}
@@ -32,20 +31,7 @@ public class User {
 		this.password = password;
 	}
 
-	@Column(name="age", length=10)
-	public int getAge() {
-		return age;
-	}
-
-	public void setAge(Integer age) {
-		this.age = 0;
-		if (age != null) {
-			this.age = age;
-		}
-	}
-
 	@Id
-	//�������ݿ�������ʽ��������
 	//@GeneratedValue(strategy=GenerationType.AUTO)
 	@GeneratedValue
 	public int getId() {

@@ -5,8 +5,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=GB18030">
 <title>Insert title here</title>
+<script type="text/javascript">
+function backurl(){
+}
+</script>
 </head>
 <body>
-操作成功！
+操作成功
 </body>
 </html>
