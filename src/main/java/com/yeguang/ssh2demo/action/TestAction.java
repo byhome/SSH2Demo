@@ -4,6 +4,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
 import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Action;
 import org.apache.struts2.convention.annotation.InterceptorRef;
@@ -33,6 +36,18 @@ public class TestAction {
 		System.out.println("进入TestAction");
 		setType("json");
 		setResult("ok");
+
+		JSONObject jsonObject = new JSONObject();
+		
+		// 返回一个JSONArray对象
+        JSONArray jsonArray = new JSONArray();
+        jsonArray.add(0, "this is a jsonArray value");
+        jsonArray.add(1, "another jsonArray value");
+        jsonObject.element("jsonArray", jsonArray);
+        //在jsonObject后面住家一个jsonArray
+        JSONArray array = jsonObject.getJSONArray("jsonArray");
+        System.out.println(jsonObject);
+		
 		return "success";
 	}
 	
