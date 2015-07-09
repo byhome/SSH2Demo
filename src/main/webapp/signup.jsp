@@ -43,7 +43,7 @@ function init(){
 
 <body onload="init();">
 	<div id="loginModal" class="modal show">
-		<form action="signup.action" class="form col-md-12 center-block" id="login_form">
+		<form action="signup" class="form col-md-12 center-block" id="login_form">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header text-center"><h3>зЂВс</h3></div>

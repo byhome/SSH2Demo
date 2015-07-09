@@ -40,7 +40,7 @@ function init(){
 
 <body onload="init();">
 	<div id="loginModal" class="modal show">
-		<form action="modifypwd.action" class="form col-md-12 center-block" id="login_form">
+		<form action="modifypwd" class="form col-md-12 center-block" id="login_form">
 			<div class="modal-dialog">
 				<div class="modal-content">
 					<div class="modal-header text-center"><h3>ĞŞ¸ÄÃÜÂë</h3></div>

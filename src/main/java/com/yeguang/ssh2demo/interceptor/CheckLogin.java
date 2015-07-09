@@ -22,13 +22,13 @@ public class CheckLogin implements Interceptor {
 		
 		System.out.println("------CheckLogin.intercept------");	
 		
-		/*Map parameters = ActionContext.getContext().getSession();
+		Map parameters = ActionContext.getContext().getSession();
 		
 		String user = (String) parameters.get("user.name");
 		
 		if(user == null){
 			return "failed";
-		}*/
+		}
 		
 		return aInvocation.invoke();
 	}

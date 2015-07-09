@@ -31,7 +31,9 @@ public class TestAction {
     TestService testSvc;
 	
 	@Action(value = "strust2Test", interceptorRefs={@InterceptorRef(value = "myInterceptor")},
-			         results = {@Result(name="success", type = "json", params = {"includeProperties", "result,type"})})
+			         results = {@Result(name="success", type = "json", 
+			                     params = {"includeProperties", "result,type"}),
+			                    @Result(name="failed", location = "/index.jsp", type="redirect")})
 	public String test() {
 		System.out.println("进入TestAction");
 		setType("json");
@@ -52,7 +54,7 @@ public class TestAction {
 	}
 	
 	@Action(value = "login", results = {@Result(name="success", location = "/modifypwd.jsp", type="redirect"),
-			@Result(name="failed", location = "/failed.jsp")})
+			@Result(name="failed", location = "/failed.jsp", type="redirect")})
 	public String login() {
 		System.out.println("登录");
 		try {
@@ -68,7 +70,7 @@ public class TestAction {
 	}
 	
 	@Action(value = "signup", results = {@Result(name="success", location = "/index.jsp", type="redirect"),
-			@Result(name="failed", location = "/failed.jsp")})
+			@Result(name="failed", location = "/failed.jsp", type="redirect")})
 	public String singup() {
 		System.out.println("注册");
 		
