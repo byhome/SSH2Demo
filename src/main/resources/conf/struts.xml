@@ -26,6 +26,8 @@
 	<constant name="struts.tag.altSyntax" value="true" />
 	<!-- 对于WebLogic,Orion,OC4J此属性应该设置成true -->
 	<constant name="struts.dispatcher.parametersWorkaround" value="false" />
+	<!-- 配置后缀名 -->
+	<constant name="struts.action.extension" value=","/>  
 
 	<package name="testPackage" extends="struts-default" namespace="/">
 		<result-types>

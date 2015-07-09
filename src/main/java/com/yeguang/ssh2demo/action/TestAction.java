@@ -31,7 +31,7 @@ public class TestAction {
     TestService testSvc;
 	
 	@Action(value = "strust2Test", interceptorRefs={@InterceptorRef(value = "myInterceptor")},
-			         results = {@Result(name="success", type = "json")})
+			         results = {@Result(name="success", type = "json", params = {"includeProperties", "result,type"})})
 	public String test() {
 		System.out.println("进入TestAction");
 		setType("json");
